@@ -609,22 +609,19 @@
         "internalType": "uint32",
         "name": "_stamp",
         "type": "uint32"
-      }
-    ],
-    "name": "setTimer",
-    "outputs": [],
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "inputs": [
+      },
       {
         "internalType": "uint32",
-        "name": "_whitestamp",
+        "name": "_Skull_List_Time",
+        "type": "uint32"
+      },
+      {
+        "internalType": "uint32",
+        "name": "_wl",
         "type": "uint32"
       }
     ],
-    "name": "set_SkullList_Timer",
+    "name": "setTimer",
     "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function"
