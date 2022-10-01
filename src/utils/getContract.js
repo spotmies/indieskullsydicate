@@ -218,7 +218,7 @@ function Parent() {
 
   const getContract = () => {
     try {
-      const contractAddress = "0xfC608b47680DEB5186843Ce90587e902101D4da5";
+      const contractAddress = "0xE2DbFf034322e5aDE22e01762143A94b5a6B3C14";
       const provider = new ethers.providers.Web3Provider(window.ethereum);
       const signer = provider.getSigner();
       const contract = new ethers.Contract(
