@@ -218,7 +218,7 @@ function Parent() {
 
   const getContract = () => {
     try {
-      const contractAddress = "0x2b04259a891C0055D9178F1E4fddB7D94E554F8e";
+      const contractAddress = "0xB2C72977624379D2a77b1fc30ec092009ecf7A7a";
       const provider = new ethers.providers.Web3Provider(window.ethereum);
       const signer = provider.getSigner();
       const contract = new ethers.Contract(
@@ -343,6 +343,18 @@ function Parent() {
     }
   };
 
+  const setBaseUri = async () => {
+    console.log("base setting.....");
+    try {
+      await getContract().setBaseURI(
+        "https://gateway.pinata.cloud/ipfs/QmRm2kp2k9zyRBVzXEo4SsF2fqeibBPJFdJjsiC1dfArjJ/"
+      );
+      console.log("base uri set");
+    } catch (error) {
+      console.log("error, set base uri", error);
+    }
+  };
+
   //
   //
   //
@@ -357,6 +369,9 @@ function Parent() {
         loadImage={true}
         onClickMint={() => {
           clickedMint();
+        }}
+        setURI={() => {
+          setBaseUri();
         }}
       />
     </div>

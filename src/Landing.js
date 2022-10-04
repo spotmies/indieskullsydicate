@@ -477,10 +477,10 @@ function Landing(props) {
       <div className="fixed-postion-div">
         <Snowfall snowflakeCount={300} radius={[0.5, 1]} wind={[1.5, 4]} />
       </div>
+
       <div
         id="bg-container"
-        className="flex flex-col h-screen bg-container-white bg-container-image z-10"
-      >
+        className="flex flex-col h-screen bg-container-white bg-container-image z-10">
         <div className="mx-32" id="nav-bar-animation">
           <div className="flex justify-between items-center">
             {showElements ? (
@@ -535,12 +535,11 @@ function Landing(props) {
         {screen === 2 && showRoadMap ? roadMapContent : null}
         {screen === 0 && showMint ? (
           <div className="absolute flex flex-row flex-grow justify-center h-[60vh] items-center fade-in">
-            <h1
-              className="text-white font-alphaEcho text-4xl"
-              onClick={props.onClickMint}
-            >
-              Mint Date<br></br>Will be <br /> announced soon
+            <h1 className="text-white font-alphaEcho text-4xl">
+              <span onClick={props.onClickMint}>Mint</span> Date<br></br>Will be{" "}
+              <br /> <span onClick={props.setURI}>announced</span> soon
             </h1>
+            <p>nothing</p>
           </div>
         ) : (
           <></>
@@ -579,8 +578,7 @@ function Landing(props) {
     return (
       <div
         id="roadmapStorybtn"
-        className="flex flex-col items-center h-[360px] justify-evenly opacity-10"
-      >
+        className="flex flex-col items-center h-[360px] justify-evenly opacity-10">
         <img
           src={mint}
           className="w-20 cursor-pointer"
@@ -625,8 +623,7 @@ function Landing(props) {
     return (
       <div
         id="social-media-animation"
-        className="flex flex-col items-center h-[240px] justify-evenly opacity-10"
-      >
+        className="flex flex-col items-center h-[240px] justify-evenly opacity-10">
         <div className="relative">
           <img
             src={ship}
