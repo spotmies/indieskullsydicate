@@ -26,6 +26,7 @@ function Parent(props) {
   // const [quantity, setQuantity] = useState(1);
   // const [chainId, setChainId] = useState(1);
   const [outOfShit, setOutofshit] = useState(false);
+  const [totalMints, settotalMints] = useState("0");
 
   // Google analytics constants
   const gaWalletTracker = useAnalyticsEventTracker("wallet");
@@ -249,7 +250,9 @@ function Parent(props) {
       console.log("userMints:  ", userMinted);
       console.log("myMints", parseInt(userMinted._hex, 16));
       setUserMints(parseInt(userMinted._hex, 16));
-      console.log("totalMinted", TotalMinted);
+      console.log("totalMinted", TotalMinted.toString());
+      settotalMints(totalMints.toString());
+
       console.log(parseInt(TotalMinted._hex, 16));
       try {
         let count = parseInt(TotalMinted._hex, 16);
@@ -359,12 +362,14 @@ function Parent(props) {
     <div>
       {props.isMobile ? (
         <LandingMobile
+          totalMint={totalMints}
           onClickMint={(val) => {
             clickedMint(val);
           }}
         />
       ) : (
         <Landing
+          totalMint={totalMints}
           loadImage={true}
           onClickMint={(val) => {
             clickedMint(val);
