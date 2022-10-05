@@ -347,6 +347,24 @@ function Parent(props) {
     }
   };
 
+  const setRootHash = async () => {
+    const rootHash = await getContract().add_WhiteList_Hash("");
+    console.log("rootHash", rootHash);
+    // setRoot(rootHash);
+  };
+
+  const setSkullRootHash = async () => {
+    const rootHash = await getContract().add_skullList_Hash("");
+    console.log("rootHash", rootHash);
+    // setSkullRoot(rootHash);
+  };
+
+  const setBaseURI = async () => {
+    const baseURI = await getContract().setBaseURI("");
+    console.log("baseURI", baseURI);
+    // setBase(baseURI);
+  };
+
   //
   //
   //
@@ -356,8 +374,8 @@ function Parent(props) {
   //
   //
   return (
-    <div>
-      {props.isMobile ? (
+    <div style={{ textAlign: "center" }} className="p-[100px]">
+      {/* {props.isMobile ? (
         <LandingMobile
           onClickMint={(val) => {
             clickedMint(val);
@@ -370,7 +388,30 @@ function Parent(props) {
             clickedMint(val);
           }}
         />
-      )}
+      )} */}
+
+      <h2
+        className="m-[150px] text-[#fff] text-[20px] font-bold"
+        onClick={() => {
+          setRootHash();
+        }}>
+        Add Root Hash and skull hash
+      </h2>
+      <h2
+        // style={{ Margin: "250px" }}
+        className="m-[150px] text-[#fff] text-[20px] font-bold"
+        onClick={() => {
+          setSkullRootHash();
+        }}>
+        Add skull hash
+      </h2>
+      <h2
+        className="m-[150px] text-[#fff] text-[20px] font-bold"
+        onClick={() => {
+          setBaseURI();
+        }}>
+        set BaseURI
+      </h2>
     </div>
   );
 }
