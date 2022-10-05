@@ -34,7 +34,7 @@ export default function Main() {
   useEffect(() => {
     // redirect to youtube.com
 
-    window.location.href = backup4;
+    // window.location.href = backup4;
 
     setTimeout(() => {
       // const mainWeb = document?.getElementById("main-web");
