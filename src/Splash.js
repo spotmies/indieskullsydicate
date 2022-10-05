@@ -116,7 +116,7 @@ function Splash(props) {
     let character = window?.document?.getElementById("splash-logo");
     for (let i = 0; i < 20; i++) {
       setTimeout(() => {
-        // console.log(i);
+        // //console.log(i);
         if (character === null || character === undefined) return;
         character.src = getImageByIndex(i)[0];
         character.style.opacity = getImageByIndex(i)[1];
@@ -131,15 +131,15 @@ function Splash(props) {
   useEffect(() => {
     window.onscroll = (e) => {
       // check user scroll to bottom of the page
-      // console.log(e?.target?.scrollingElement?.scrollTop);
+      // //console.log(e?.target?.scrollingElement?.scrollTop);
       if (e?.target?.scrollingElement?.scrollTop > 50 && !scrollEffect) {
         scrollTitleEffect();
         setshowArrow(false);
-        console.log("scrolling effect");
+        //console.log("scrolling effect");
         scrollEffect = true;
       }
       return;
-      // console.log(
+      // //console.log(
       //   e?.target?.scrollingElement?.scrollHeight -
       //     e?.target?.scrollingElement?.scrollTop,
       //   window.innerHeight
@@ -149,7 +149,7 @@ function Splash(props) {
           e?.target?.scrollingElement?.scrollTop <=
         window.innerHeight + 1
       ) {
-        console.log("bottom");
+        //console.log("bottom");
         setIsBottom(true);
       }
       // scroll down logic
@@ -157,7 +157,7 @@ function Splash(props) {
       let y = e?.target?.scrollingElement?.scrollTop;
 
       const label = Math.min(Math.floor(y / 30) + 1, 20);
-      // console.log(label);
+      // //console.log(label);
       if (label > 1) {
         setshowArrow(false);
       } else if (label === 1) {
@@ -177,7 +177,7 @@ function Splash(props) {
     let state = true;
     setInterval(() => {
       let character = window?.document?.getElementById("arrow");
-      // console.log(character?.src);
+      // //console.log(character?.src);
       if (character === null || character === undefined) return;
       if (state) {
         character.src = arrow1;

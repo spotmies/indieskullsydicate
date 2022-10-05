@@ -95,7 +95,7 @@ function LandingMobile(props) {
     const timer = setInterval(() => {
       setDiff(getDateDiff(new Date(), timeStamp));
       if (new Date() > timeStamp) {
-        console.log("time is up");
+        //console.log("time is up");
         setMintStarted(true);
         clearInterval(timer);
       }
@@ -116,7 +116,7 @@ function LandingMobile(props) {
         const accounts = await window.ethereum.request({
           method: "eth_requestAccounts",
         });
-        console.log(accounts[0]);
+        //console.log(accounts[0]);
         setWalletAddress(accounts[0]);
         return accounts[0];
       } catch (error) {
@@ -166,8 +166,8 @@ function LandingMobile(props) {
 
   setTimeout(() => setVisible(true), 650);
   const onclickMint = () => {
-    console.log("mint");
-    console.log(mintCount);
+    //console.log("mint");
+    //console.log(mintCount);
   };
 
   return (

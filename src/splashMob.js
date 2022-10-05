@@ -148,7 +148,7 @@ function SplashMob(props) {
     if (props.isMobile) {
       if (isBottom) {
         setVisible(true);
-        console.log("mobile");
+        //console.log("mobile");
       }
       return;
     }
@@ -192,7 +192,7 @@ function SplashMob(props) {
     let character = window?.document?.getElementById("splash-logo");
     for (let i = 0; i < 20; i++) {
       setTimeout(() => {
-        // console.log(i);
+        // //console.log(i);
         if (character === null || character === undefined) return;
         character.src = getImageByIndex(i)[0];
         character.style.opacity = getImageByIndex(i)[1];
@@ -208,16 +208,16 @@ function SplashMob(props) {
     window.onscroll = (e) => {
       // return;
       // check user scroll to bottom of the page
-      // console.log(
+      // //console.log(
       //   e?.target?.scrollingElement?.scrollHeight -
       //     e?.target?.scrollingElement?.scrollTop,
       //   window.innerHeight
       // );
-      // console.log(e?.target?.scrollingElement?.scrollTop);
+      // //console.log(e?.target?.scrollingElement?.scrollTop);
       if (e?.target?.scrollingElement?.scrollTop > 30 && !scrollEffect) {
         scrollTitleEffect();
         setshowArrow(false);
-        console.log("scrolling effect");
+        //console.log("scrolling effect");
         scrollEffect = true;
       }
       return;
@@ -227,7 +227,7 @@ function SplashMob(props) {
           e?.target?.scrollingElement?.scrollTop <=
         window.innerHeight + 1
       ) {
-        console.log("bottom");
+        //console.log("bottom");
         // document.body.style.overflow = "hidden";
         setIsBottom(true);
       }
@@ -236,7 +236,7 @@ function SplashMob(props) {
       let y = e?.target?.scrollingElement?.scrollTop;
 
       const label = Math.min(Math.floor(y / 30) + 1, 20);
-      console.log(label);
+      //console.log(label);
 
       if (label > 1) {
         setshowArrow(false);
@@ -254,7 +254,7 @@ function SplashMob(props) {
     let state = true;
     setInterval(() => {
       let character = window?.document?.getElementById("arrow");
-      // console.log(character?.src);
+      // //console.log(character?.src);
       if (character === null || character === undefined) return;
       if (state) {
         character.src = arrow1;

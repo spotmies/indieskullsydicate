@@ -48,14 +48,14 @@ function Parent(props) {
 
   const leaf = buf2hex(keccak256(walletAddress));
 
-  console.log("My leaf:", buf2hex(keccak256(walletAddress)));
+  //console.log("My leaf:", buf2hex(keccak256(walletAddress)));
   console.log(
     "Proof:",
     whiteList_tree
       .getProof(buf2hex(keccak256(walletAddress)))
       .map((x) => buf2hex(x.data))
   );
-  console.log("Root Hash:", buf2hex(whiteList_tree.getRoot()));
+  //console.log("Root Hash:", buf2hex(whiteList_tree.getRoot()));
 
   ////////////////////////////////////////////////////////
   /////SKULL MERKLE TREE/////////////////////////////////
@@ -73,18 +73,18 @@ function Parent(props) {
 
   const skull_leaf = skull_buf2hex(keccak256(walletAddress));
 
-  console.log("My skull leaf:", skull_buf2hex(keccak256(walletAddress)));
+  //console.log("My skull leaf:", skull_buf2hex(keccak256(walletAddress)));
   console.log(
     "skull Proof:",
     skullList_tree
       .getProof(skull_buf2hex(keccak256(walletAddress)))
       .map((x) => skull_buf2hex(x.data))
   );
-  console.log("Root skull Hash:", skull_buf2hex(skullList_tree.getRoot()));
+  //console.log("Root skull Hash:", skull_buf2hex(skullList_tree.getRoot()));
 
   const is_whiteList_Valid = async () => {
     const isValid = await getContract().whiteList_MerkleVerify(proof, leaf);
-    console.log("isValid?", isValid);
+    //console.log("isValid?", isValid);
     return isValid;
   };
 
@@ -93,7 +93,7 @@ function Parent(props) {
       skull_proof,
       skull_leaf
     );
-    console.log("isValid?", isValid);
+    //console.log("isValid?", isValid);
     return isValid;
   };
 
@@ -139,7 +139,7 @@ function Parent(props) {
   //     })
   //     .then((response) => {
   //       // setPost(response.data);
-  //       console.log(response);
+  //       //console.log(response);
   //     });
   // }
 
@@ -161,18 +161,18 @@ function Parent(props) {
         setWalletText(true);
         gaWalletTracker("wallet-connected");
         setWallets(accounts[0].slice(-4));
-        console.log(accounts[0]);
+        //console.log(accounts[0]);
         setWalletAddress(accounts[0]);
         setWalltetAddressSmall(accounts[0].toLocaleLowerCase());
         checkWl(accounts[0].toLocaleLowerCase());
-        console.log("account", accounts[0].toLocaleLowerCase());
+        //console.log("account", accounts[0].toLocaleLowerCase());
         // createPost(accounts[0]);
       } catch (error) {
-        // console.log("Error connecting....");
+        // //console.log("Error connecting....");
         alert(error);
       }
     } else {
-      //console.log("Metamask not detected");
+      ////console.log("Metamask not detected");
       gaWalletTracker("no-metamask");
       alert("Metamask not detected");
     }
@@ -192,13 +192,13 @@ function Parent(props) {
         isSkullList = true;
       }
     });
-    console.log("is whitelist", isWhiteList);
-    console.log("is skullListed", isSkullList);
+    //console.log("is whitelist", isWhiteList);
+    //console.log("is skullListed", isSkullList);
     if (isWhiteList || TotalMinted.toString() >= 2000) {
       setTimeStamp(whiteListDate);
     } else if (isSkullList || TotalMinted.toString() >= 1500) {
       // setTimeStamp(skullListDate);
-      console.log("waiting for skull list");
+      //console.log("waiting for skull list");
     }
   }
 
@@ -206,7 +206,7 @@ function Parent(props) {
     try {
       const provider = new ethers.providers.Web3Provider(window?.ethereum);
       const { chainId } = await provider.getNetwork();
-      console.log("chainId", chainId);
+      //console.log("chainId", chainId);
       // setChainId(chainId);
 
       if (chainId !== 1) {
@@ -227,7 +227,7 @@ function Parent(props) {
         contractabi,
         signer
       );
-      // console.log("contract", contract);
+      // //console.log("contract", contract);
       return contract;
     } catch (error) {
       console.log("error, getcontract", error);
@@ -239,18 +239,18 @@ function Parent(props) {
 
     if (!window.ethereum) {
       //alert("Metamask not detected");
-      console.log("Metamask not detected");
+      //console.log("Metamask not detected");
       return null;
     }
 
     try {
       const TotalMinted = await getContract().totalSupply();
       const userMinted = await getContract().userMint();
-      console.log("userMints:  ", userMinted);
-      console.log("myMints", parseInt(userMinted._hex, 16));
+      //console.log("userMints:  ", userMinted);
+      //console.log("myMints", parseInt(userMinted._hex, 16));
       setUserMints(parseInt(userMinted._hex, 16));
-      console.log("totalMinted", TotalMinted);
-      console.log(parseInt(TotalMinted._hex, 16));
+      //console.log("totalMinted", TotalMinted);
+      //console.log(parseInt(TotalMinted._hex, 16));
       try {
         let count = parseInt(TotalMinted._hex, 16);
 
@@ -275,7 +275,7 @@ function Parent(props) {
     // const addr = connection.address;
     // const supply = await contract.suppliedNFTs();
     // setSupply(supply);
-    console.log("nft count ", NFTCount);
+    //console.log("nft count ", NFTCount);
     try {
       if (NFTCount < 1) {
         alert("Please enter valid quantity");
@@ -286,9 +286,9 @@ function Parent(props) {
       let isWhiteList = await is_whiteList_Valid();
       let isSkullList = await is_skullList_Valid();
 
-      console.log("is whitelist", isWhiteList, "is skulllist", isSkullList);
+      //console.log("is whitelist", isWhiteList, "is skulllist", isSkullList);
       if (isWhiteList) {
-        console.log("whitelisted", walltetAddressSmall);
+        //console.log("whitelisted", walltetAddressSmall);
         if (userMintArg === null) {
           alert("Please connect to wallet");
           return;
@@ -296,11 +296,11 @@ function Parent(props) {
           ethValue = 0;
         }
       } else if (isSkullList) {
-        console.log("is skullListed", walltetAddressSmall);
+        //console.log("is skullListed", walltetAddressSmall);
         ethValue = NFTCount * 0.009;
       }
 
-      console.log("final", NFTCount, ethValue);
+      //console.log("final", NFTCount, ethValue);
       if (isWhiteList) {
         getContract()
           .mint(NFTCount, proof, leaf, {
@@ -332,16 +332,16 @@ function Parent(props) {
       console.log("error91, mint button", error);
     }
 
-    //console.log(result);
+    ////console.log(result);
   };
 
   const clickedMint = async (mints) => {
     setNFTCount(mints);
-    console.log("clickedMint", mints);
+    //console.log("clickedMint", mints);
     requestAccount(false);
     getChainId();
     let userMints = await mintCount();
-    console.log("userMints", userMints);
+    //console.log("userMints", userMints);
     if (userMints != null) {
       mintToken(userMints, mints);
     }

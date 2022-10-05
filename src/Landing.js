@@ -108,7 +108,7 @@ function Landing(props) {
     const timer = setInterval(() => {
       setDiff(getDateDiff(new Date(), timeStamp));
       if (new Date() > timeStamp) {
-        console.log("time is up");
+        //console.log("time is up");
         setMintStarted(true);
         clearInterval(timer);
       }
@@ -258,9 +258,9 @@ function Landing(props) {
 
         audioTag.volume = 0.7;
         audioTag.loop = true;
-        console.log("playing");
+        //console.log("playing");
       } else {
-        console.log("pausing");
+        //console.log("pausing");
         audioTag.pause();
         audioTag.loop = false;
         audioTag.volume = 0;
@@ -344,7 +344,7 @@ function Landing(props) {
     hideShowHalfSkull("none");
     if (props.loadImage) {
       setTimeout(() => {
-        console.log("skull images loaded");
+        //console.log("skull images loaded");
         const skullFlow = window?.document?.getElementById("skullflow");
         skullImage.forEach((element, index) => {
           setTimeout(() => {
@@ -418,7 +418,7 @@ function Landing(props) {
     }
 
     removeAnimation(scr);
-    console.log(scr);
+    //console.log(scr);
     //0 - mint
     //1 - roadmap
     //2 - story
@@ -475,18 +475,18 @@ function Landing(props) {
         // setWalletText(true);
         // gaWalletTracker("wallet-connected");
         setWallets(accounts[0].slice(-4));
-        console.log(accounts[0]);
+        //console.log(accounts[0]);
         setWalletAddress(accounts[0]);
         setWalltetAddressSmall(accounts[0].toLocaleLowerCase());
         // checkWl(accounts[0].toLocaleLowerCase());
-        // console.log("account", accounts[0].toLocaleLowerCase());
+        // //console.log("account", accounts[0].toLocaleLowerCase());
         // createPost(accounts[0]);
       } catch (error) {
-        // console.log("Error connecting....");
+        console.log("Error connecting....", error);
         alert(error);
       }
     } else {
-      //console.log("Metamask not detected");
+      ////console.log("Metamask not detected");
       // gaWalletTracker("no-metamask");
       alert("Metamask not detected");
     }
@@ -494,24 +494,24 @@ function Landing(props) {
 
   const soundControl = () => {
     const soundIcon = window?.document?.getElementById("sound-icon");
-    console.log(soundIcon.name);
+    //console.log(soundIcon.name);
     if (soundIcon.name == "true") {
-      console.log("sound off");
+      //console.log("sound off");
       soundIcon.name = "false";
       soundIcon.src = soundOff;
       playAudio(false);
     } else {
-      console.log("sound on");
+      //console.log("sound on");
       soundIcon.name = "true";
       soundIcon.src = soundOn;
       playAudio(true);
     }
-    // console.log(audio.state);
+    // //console.log(audio.state);
   };
 
   const onclickMint = () => {
-    console.log("mint");
-    console.log(mintCount);
+    //console.log("mint");
+    //console.log(mintCount);
   };
 
   return (

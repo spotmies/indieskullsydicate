@@ -15,8 +15,8 @@ export default function Main() {
   const [screen, setScreen] = useState(0);
   const [showSplash, setShowSplash] = useState(true);
   useEffect(() => {
-    console.log(screen);
-    console.log(window.innerWidth);
+    //console.log(screen);
+    //console.log(window.innerWidth);
   }, [screen]);
 
   useEffect(() => {
@@ -27,7 +27,7 @@ export default function Main() {
       //   mainWeb.classList.add("main-web");
       // }
       setShowSplash(false);
-      console.log("splash");
+      //console.log("splash");
     }, 3000);
 
     setTimeout(() => {

@@ -29,9 +29,9 @@ export default function CheckWhiteList() {
 
         audioTag.volume = 0.7;
         audioTag.loop = true;
-        console.log("playing");
+        //console.log("playing");
       } else {
-        console.log("pausing");
+        //console.log("pausing");
         audioTag.pause();
         audioTag.loop = false;
         audioTag.volume = 0;
@@ -43,7 +43,7 @@ export default function CheckWhiteList() {
 
   const soundControl = (onOnly) => {
     const soundIcon = window?.document?.getElementById("sound-icon");
-    console.log(soundIcon.name);
+    //console.log(soundIcon.name);
     if (onOnly === true) {
       soundIcon.name = "true";
       soundIcon.src = soundOn;
@@ -51,17 +51,17 @@ export default function CheckWhiteList() {
       return;
     }
     if (soundIcon.name == "true") {
-      console.log("sound off");
+      //console.log("sound off");
       soundIcon.name = "false";
       soundIcon.src = soundOff;
       playAudio(false);
     } else {
-      console.log("sound on");
+      //console.log("sound on");
       soundIcon.name = "true";
       soundIcon.src = soundOn;
       playAudio(true);
     }
-    // console.log(audio.state);
+    // //console.log(audio.state);
   };
 
   async function requestAccount(showError) {
@@ -77,7 +77,7 @@ export default function CheckWhiteList() {
         const accounts = await window.ethereum.request({
           method: "eth_requestAccounts",
         });
-        console.log(accounts[0]);
+        //console.log(accounts[0]);
         setWalletAddress(accounts[0]);
         return accounts[0];
       } catch (error) {
@@ -128,8 +128,8 @@ export default function CheckWhiteList() {
           isSkullList = true;
         }
       });
-      console.log("is whitelist", isWhiteList);
-      console.log("is skullListed", isSkullList);
+      //console.log("is whitelist", isWhiteList);
+      //console.log("is skullListed", isSkullList);
       if (isWhiteList && isSkullList) {
         alert(
           "You are in both whitelist and skulllist, please contact the team"
