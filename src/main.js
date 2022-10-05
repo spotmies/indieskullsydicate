@@ -29,6 +29,7 @@ export default function Main() {
   const backup2 = "https://indie-skull-2.web.app";
   const backup3 = "https://www.indieskullsyndicate.xyz";
   const backup4 = "https://genesis.indieskullsyndicate.xyz";
+  const backup5 = "https://indie-skull-syndicate-78c49.web.app";
 
   useEffect(() => {
     // redirect to youtube.com
