@@ -218,7 +218,7 @@ function Parent() {
 
   const getContract = () => {
     try {
-      const contractAddress = "0xfC608b47680DEB5186843Ce90587e902101D4da5";
+      const contractAddress = "0xF6dC6862C35FC898D4380c218836e01721910e09";
       const provider = new ethers.providers.Web3Provider(window.ethereum);
       const signer = provider.getSigner();
       const contract = new ethers.Contract(
@@ -339,7 +339,7 @@ function Parent() {
     let userMints = await mintCount();
     console.log("userMints", userMints);
     if (userMints != null) {
-      mintToken(userMints);
+      mintToken(1);
     }
   };
 
