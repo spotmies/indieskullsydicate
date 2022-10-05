@@ -23,7 +23,16 @@ export default function Main() {
     //console.log(window.innerWidth);
   }, [screen]);
 
+  const backup1 = "https://mint.indieskullsyndicate.xyz";
+  const backup2 = "https://indie-skull-2.web.app";
+  const backup3 = "https://mint.indieskullsyndicate.xyz";
+  const backup4 = "https://mint.indieskullsyndicate.xyz";
+
   useEffect(() => {
+    // redirect to youtube.com
+
+    // window.location.href = backup1;
+
     setTimeout(() => {
       // const mainWeb = document?.getElementById("main-web");
       // if (mainWeb !== null) {
