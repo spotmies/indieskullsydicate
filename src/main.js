@@ -12,7 +12,9 @@ import ReactGA from "react-ga";
 
 window.Buffer = window.Buffer || Buffer;
 
-const TRACKING_ID = "UA-230631230-4"; // OUR_TRACKING_ID
+// const TRACKING_ID = "UA-230631230-4"; // OUR_TRACKING_ID for www
+const TRACKING_ID = "UA-230631230-5"; // OUR_TRACKING_ID for mint
+
 ReactGA.initialize(TRACKING_ID);
 
 export default function Main() {
