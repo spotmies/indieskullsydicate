@@ -124,7 +124,7 @@ function Splash(props) {
         if (i >= 19) {
           setIsBottom(true);
         }
-      }, i * 60);
+      }, i * 30);
     }
   };
   let scrollEffect = false;

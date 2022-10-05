@@ -1,5 +1,7 @@
-import skull from "./assets/right_new_1.png";
-import man from "./assets/mintleft_new.png";
+// import skull from "./assets/right_new_1.png";
+// import man from "./assets/mintleft_new.png";
+import skull from "./assets/mint_new_right.png";
+import man from "./assets/mint_new_left.png";
 
 import roadMapleft from "./assets/Roadmap_left2.png";
 import roadMapRight from "./assets/Roadmap_right.png";

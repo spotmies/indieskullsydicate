@@ -27,8 +27,8 @@ export default function Main() {
       //   mainWeb.classList.add("main-web");
       // }
       setShowSplash(false);
-      //console.log("splash");
-    }, 3000);
+      console.log("splash");
+    }, 1500);
 
     setTimeout(() => {
       const mainWeb = document?.getElementById("main-web");
@@ -36,7 +36,7 @@ export default function Main() {
         mainWeb.classList.remove("main-web-white");
         mainWeb.classList.add("main-web");
       }
-    }, 5000);
+    }, 2000);
   }, []);
 
   return (
