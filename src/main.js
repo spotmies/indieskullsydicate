@@ -1,15 +1,19 @@
 import React, { useState, useEffect } from "react";
-import Landing from "./Landing";
+
 import { Animated } from "react-animated-css";
 import Splash from "./Splash";
-import LandingMobile from "./mobile/Landing";
+
 import SplashMob from "./splashMob";
 import skullGif from "./assets/splash.gif";
 
-import mouse from "./assets/hand_mouse.png";
 import Parent from "./utils/getContract";
 import { Buffer } from "buffer/";
+// import ReactGA from "react-ga";
+
 window.Buffer = window.Buffer || Buffer;
+
+// const TRACKING_ID = "UA-230631230-4"; // OUR_TRACKING_ID
+// ReactGA.initialize(TRACKING_ID);
 
 export default function Main() {
   const [screen, setScreen] = useState(0);

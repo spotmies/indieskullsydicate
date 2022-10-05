@@ -91,26 +91,6 @@
     "type": "error"
   },
   {
-    "inputs": [],
-    "name": "Wait_Till_Skull_Mint_Starts",
-    "type": "error"
-  },
-  {
-    "inputs": [],
-    "name": "WhiteListers_Still_Have_Time_To_Mint",
-    "type": "error"
-  },
-  {
-    "inputs": [],
-    "name": "You_can_only_mint_1_NFT",
-    "type": "error"
-  },
-  {
-    "inputs": [],
-    "name": "You_can_only_mint_2_NFT",
-    "type": "error"
-  },
-  {
     "anonymous": false,
     "inputs": [
       {
@@ -562,12 +542,43 @@
   {
     "inputs": [
       {
+        "internalType": "address",
+        "name": "_collab",
+        "type": "address"
+      }
+    ],
+    "name": "setCollabAddress",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
         "internalType": "string",
         "name": "_contractURI",
         "type": "string"
       }
     ],
     "name": "setContractUri",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "bytes32",
+        "name": "_whiteList_root",
+        "type": "bytes32"
+      },
+      {
+        "internalType": "bytes32",
+        "name": "_skull_root",
+        "type": "bytes32"
+      }
+    ],
+    "name": "setRootHashes",
     "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function"
@@ -609,22 +620,24 @@
         "internalType": "uint32",
         "name": "_stamp",
         "type": "uint32"
-      }
-    ],
-    "name": "setTimer",
-    "outputs": [],
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "inputs": [
+      },
       {
         "internalType": "uint32",
-        "name": "_whitestamp",
+        "name": "_Skull_List_Time",
+        "type": "uint32"
+      },
+      {
+        "internalType": "uint32",
+        "name": "_wl",
+        "type": "uint32"
+      },
+      {
+        "internalType": "uint32",
+        "name": "_end_of_WL_mint",
         "type": "uint32"
       }
     ],
-    "name": "set_SkullList_Timer",
+    "name": "setTimer",
     "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function"

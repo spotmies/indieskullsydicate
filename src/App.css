@@ -317,12 +317,12 @@
 .right-left-animation {
   animation-name: rightleftanimation;
   animation-duration: 2s;
-  transform: translateX(85%);
+  transform: translateX(85%) translateY(0.8%);
 }
 
 @keyframes rightleftanimation {
   0% {
-    transform: translateX(-5.5%);
+    transform: translateX(-5.5%) translateY(0.8%);
   }
   /* 33% {
     transform: translateX(85%);
@@ -331,7 +331,7 @@
     transform: translateX(-5.5%);
   } */
   100% {
-    transform: translateX(85%);
+    transform: translateX(85%) translateY(0.8%);
   }
 }
 

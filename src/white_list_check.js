@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-import skull from "./assets/right_new_1.png";
-import man from "./assets/left_new.png";
+import skull from "./assets/mint_new_right.png";
+import man from "./assets/mint_new_left.png";
 import constants from "./utils/constants";
 import iSSlogo from "./assets/logo.png";
 import wallet_Icon from "./assets/metamask_icon.png";
