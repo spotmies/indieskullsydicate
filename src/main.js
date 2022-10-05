@@ -25,8 +25,8 @@ export default function Main() {
 
   const backup1 = "https://mint.indieskullsyndicate.xyz";
   const backup2 = "https://indie-skull-2.web.app";
-  const backup3 = "https://mint.indieskullsyndicate.xyz";
-  const backup4 = "https://mint.indieskullsyndicate.xyz";
+  const backup3 = "https://www.indieskullsyndicate.xyz";
+  const backup4 = "https://genesis.indieskullsyndicate.xyz";
 
   useEffect(() => {
     // redirect to youtube.com
