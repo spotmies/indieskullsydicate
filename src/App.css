@@ -371,14 +371,14 @@
   transform: translateX(6%);
 }
 .trans-right {
-  transform: translateX(-4.5%) translateY(0.8%);
+  transform: translateX(-4%) translateY(0.8%);
 }
 
 .trans-left-mob {
   transform: translateX(8%);
 }
 .trans-right-mob {
-  transform: translateX(-2.5%) translateY(0.6%);
+  transform: translateX(-2%) translateY(0.6%);
 }
 
 /* .parent .right-animation {

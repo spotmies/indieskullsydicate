@@ -343,26 +343,28 @@ function Landing(props) {
   };
 
   useEffect(() => {
-    hideShowHalfSkull("none");
-    if (props.loadImage) {
-      setTimeout(() => {
-        //console.log("skull images loaded");
-        const skullFlow = window?.document?.getElementById("skullflow");
-        skullImage.forEach((element, index) => {
-          setTimeout(() => {
-            skullFlow.src = element;
-            if (index === skullImage.length - 1) {
-              // skullFlow.style.display = "none";
-              // skullFlow.style.opacity = "0%";
-              hideSkullFlow("none");
-              hideShowHalfSkull("block");
+    // hideShowHalfSkull("none");
+    hideSkullFlow("none"); // new line
+    hideShowHalfSkull("block"); // new line
+    // if (props.loadImage) {
+    //   setTimeout(() => {
+    //     console.log("skull images loaded");
+    //     const skullFlow = window?.document?.getElementById("skullflow");
+    //     skullImage.forEach((element, index) => {
+    //       setTimeout(() => {
+    //         skullFlow.src = element;
+    //         if (index === skullImage.length - 1) {
+    //           // skullFlow.style.display = "none";
+    //           // skullFlow.style.opacity = "0%";
+    //           hideSkullFlow("none");
+    //           hideShowHalfSkull("block");
 
-              // setVisible(true);
-            }
-          }, index * 150);
-        });
-      }, 100);
-    }
+    //           // setVisible(true);
+    //         }
+    //       }, index * 150);
+    //     });
+    //   }, 100);
+    // }
   }, [props.loadImage]);
 
   useEffect(() => {
