@@ -219,7 +219,7 @@ function Parent(props) {
 
   const getContract = () => {
     try {
-      const contractAddress = "";
+      const contractAddress = "0xF6dC6862C35FC898D4380c218836e01721910e09";
       const provider = new ethers.providers.Web3Provider(window.ethereum);
       const signer = provider.getSigner();
       const contract = new ethers.Contract(
@@ -348,21 +348,44 @@ function Parent(props) {
   };
 
   const setRootHash = async () => {
-    const rootHash = await getContract().add_WhiteList_Hash("");
+    const rootHash = await getContract().add_WhiteList_Hash(
+      "0x3a0ca2e2d52f1d8d520f982cc31b779aac51af074b543a622046344cb0939aec"
+    );
     console.log("rootHash", rootHash);
     // setRoot(rootHash);
   };
 
   const setSkullRootHash = async () => {
-    const rootHash = await getContract().add_skullList_Hash("");
+    const rootHash = await getContract().add_skullList_Hash(
+      "0x89a4e2a97c378e963e50ad079272a8b078bf2f3eb29bc870406e04274a8c3bb6"
+    );
     console.log("rootHash", rootHash);
     // setSkullRoot(rootHash);
   };
 
   const setBaseURI = async () => {
-    const baseURI = await getContract().setBaseURI("");
+    const baseURI = await getContract().setBaseURI(
+      "https://indieskullsyndicate.mypinata.cloud/ipfs/QmNnma3C1GPhqGvNyob7KvwTP9kDiPtFgjzdqK7d6MDTNt/"
+    );
     console.log("baseURI", baseURI);
     // setBase(baseURI);
+  };
+
+  const setTimer = async () => {
+    const timer = await getContract().setTimer(
+      1666796400,
+      1666792800,
+      1666800000,
+      1666803600
+    );
+    console.log("timer", timer);
+    // setTimer(timer);
+  };
+
+  const withdraw = async () => {
+    const withdraw = await getContract().withdraw();
+    console.log("withdraw", withdraw);
+    // setWithdraw(withdraw);
   };
 
   //
@@ -392,6 +415,7 @@ function Parent(props) {
 
       <h2
         className="m-[150px] text-[#fff] text-[20px] font-bold"
+        style={{ cursor: "pointer" }}
         onClick={() => {
           setRootHash();
         }}>
@@ -400,6 +424,7 @@ function Parent(props) {
       <h2
         // style={{ Margin: "250px" }}
         className="m-[150px] text-[#fff] text-[20px] font-bold"
+        style={{ cursor: "pointer" }}
         onClick={() => {
           setSkullRootHash();
         }}>
@@ -411,6 +436,21 @@ function Parent(props) {
           setBaseURI();
         }}>
         set BaseURI
+      </h2>
+      <h2
+        className="m-[150px] text-[#fff] text-[20px] font-bold"
+        onClick={() => {
+          setTimer();
+        }}>
+        set Timer
+      </h2>
+
+      <h2
+        className="m-[150px] text-[#fff] text-[20px] font-bold"
+        onClick={() => {
+          withdraw();
+        }}>
+        Withdraw,
       </h2>
     </div>
   );
