@@ -659,13 +659,13 @@ function Landing(props) {
         {screen === 1 && showStory ? storyContent : null}
         {screen === 2 && showRoadMap ? roadMapContent : null}
         {screen === 0 && showMint ? (
-          // mintSoonContent
-          mintStarted ? (
-            mintBuy
-          ) : (
-            mintTimer
-          )
+          mintSoonContent
         ) : (
+          // mintStarted ? (
+          //   mintBuy
+          // ) : (
+          //   mintTimer
+          // )
           // mintBuy
           <></>
         )}
