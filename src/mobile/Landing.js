@@ -292,8 +292,8 @@ function LandingMobile(props) {
             animationOutDuration={0}
             isVisible={true}
           >
-            {/* {soonContent} */}
-            {mintStarted ? mintBuy : mintTimer}
+            {soonContent}
+            {/* {mintStarted ? mintBuy : mintTimer} */}
             {/* {mintBuy} */}
           </Animated>
         )}

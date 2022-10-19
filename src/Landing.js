@@ -667,9 +667,9 @@ function Landing(props) {
         {screen === 0 && showMint ? (
           // mintSoonContent
           mintStarted ? (
-            mintBuy
+            mintSoonContent // mintBuy
           ) : (
-            mintTimer
+            mintSoonContent // mintTimer
           )
         ) : (
           // mintBuy
