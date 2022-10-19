@@ -1,6 +1,8 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, Suspense } from "react";
 import skull from "./assets/mint_new_right.png";
+import skullCompress from "./assets/mint_new_right_compress.png";
 import man from "./assets/mint_new_left.png";
+import manCompress from "./assets/mint_new_left_compress.png";
 import constants from "./utils/constants";
 import iSSlogo from "./assets/logo.png";
 import wallet_Icon from "./assets/metamask_icon.png";
@@ -185,20 +187,42 @@ export default function CheckWhiteList() {
           {navbar(false)}
 
           <div className="m-auto flex absolute bottom-0">
-            <img
-              src={man}
-              alt="Man"
-              id="character"
-              className="h-[73vh] trans-left cursor-pointer"
-              onClick={checkWl}
-            />
-
-            <img
-              src={skull}
-              onClick={checkWl}
-              id="character2"
-              className="h-[73vh] trans-right z-10 cursor-pointer"
-            />
+            <Suspense
+              fallback={
+                <img
+                  src={manCompress}
+                  alt="Man"
+                  id="character"
+                  className="h-[73vh] trans-left cursor-pointer"
+                  onClick={checkWl}
+                />
+              }
+            >
+              <img
+                src={man}
+                alt="Man"
+                id="character"
+                className="h-[73vh] trans-left cursor-pointer"
+                onClick={checkWl}
+              />
+            </Suspense>
+            <Suspense
+              fallback={
+                <img
+                  src={skullCompress}
+                  onClick={checkWl}
+                  id="character2"
+                  className="h-[73vh] trans-right z-10 cursor-pointer"
+                />
+              }
+            >
+              <img
+                src={skull}
+                onClick={checkWl}
+                id="character2"
+                className="h-[73vh] trans-right z-10 cursor-pointer"
+              />
+            </Suspense>
           </div>
           {wlState !== "" && (
             <div className="m-auto h-[73vh] justify-center items-center flex flex-col absolute bottom-0 fade-in">
@@ -233,20 +257,42 @@ export default function CheckWhiteList() {
           </div>
           {navbar(true)}
           <div className="m-auto flex absolute bottom-0 ">
-            <img
-              src={man}
-              alt="Man"
-              id="character"
-              className="w-[40vw] trans-left"
-              onClick={checkWl}
-            />
-
-            <img
-              src={skull}
-              onClick={checkWl}
-              id="character2"
-              className="w-[40vw] trans-right z-10"
-            />
+            <Suspense
+              fallback={
+                <img
+                  src={manCompress}
+                  alt="Man"
+                  id="character"
+                  className="w-[40vw] trans-left"
+                  onClick={checkWl}
+                />
+              }
+            >
+              <img
+                src={man}
+                alt="Man"
+                id="character"
+                className="w-[40vw] trans-left"
+                onClick={checkWl}
+              />
+            </Suspense>
+            <Suspense
+              fallback={
+                <img
+                  src={skullCompress}
+                  onClick={checkWl}
+                  id="character2"
+                  className="w-[40vw] trans-right z-10"
+                />
+              }
+            >
+              <img
+                src={skull}
+                onClick={checkWl}
+                id="character2"
+                className="w-[40vw] trans-right z-10"
+              />
+            </Suspense>
           </div>
           {wlState !== "" && (
             <div className="m-auto absolute bottom-[10%] z-[10] fade-in">

@@ -1,13 +1,20 @@
 // import skull from "./assets/right_new_1.png";
 // import man from "./assets/mintleft_new.png";
+import { useState, useEffect, Suspense } from "react";
 import skull from "./assets/mint_new_right.png";
+import skullCompress from "./assets/mint_new_right_compress.png";
 import man from "./assets/mint_new_left.png";
+import manCompress from "./assets/mint_new_left_compress.png";
 
 import roadMapleft from "./assets/Roadmap_left2.png";
+// import roadMapLeftCompress from "./assets/Roadmap_left2_compress.png";
 import roadMapRight from "./assets/Roadmap_right.png";
+// import roadMapRightCompress from "./assets/Roadmap_right_compress.png";
 
 import syndicateLeft from "./assets/Thesyndicate_left2.png";
+// import syndicateLeftCompress from "./assets/Thesyndicate_left2_compress.png";
 import syndicateRight from "./assets/Thesyndicate_right.png";
+// import syndicateRightCompress from "./assets/Thesyndicate_right_compress.png";
 
 import iSSlogo from "./assets/logo.png";
 import skull1 from "./assets/skull_images/1.png";
@@ -30,7 +37,6 @@ import double_skull from "./assets/double_skull.png";
 
 import "./App.css";
 
-import { useState, useEffect } from "react";
 import roadmapLogo from "./assets/roadmap.png";
 import syndicate from "./assets/thesyndicate.png";
 import ship from "./assets/opensea_icon.png";
@@ -680,20 +686,42 @@ function Landing(props) {
         )}
 
         <>
-          <img
-            src={man}
-            alt="Man"
-            id="character"
-            className="h-[73vh] trans-left cursor-pointer"
-            onClick={animate}
-          />
-
-          <img
-            src={skull}
-            onClick={animate}
-            id="character2"
-            className="h-[73vh] trans-right z-10 cursor-pointer"
-          />
+          <Suspense
+            fallback={
+              <img
+                src={manCompress}
+                alt="Man"
+                id="character"
+                className="h-[73vh] trans-left cursor-pointer"
+                onClick={animate}
+              />
+            }
+          >
+            <img
+              src={man}
+              alt="Man"
+              id="character"
+              className="h-[73vh] trans-left cursor-pointer"
+              onClick={animate}
+            />
+          </Suspense>
+          <Suspense
+            fallback={
+              <img
+                src={skullCompress}
+                onClick={animate}
+                id="character2"
+                className="h-[73vh] trans-right z-10 cursor-pointer"
+              />
+            }
+          >
+            <img
+              src={skull}
+              onClick={animate}
+              id="character2"
+              className="h-[73vh] trans-right z-10 cursor-pointer"
+            />
+          </Suspense>
         </>
       </div>
     );
