@@ -16,7 +16,7 @@ window.Buffer = window.Buffer || Buffer;
 // ReactGA.initialize(TRACKING_ID);
 
 export default function Main() {
-  const [screen, setScreen] = useState(0);
+  const [screen, setScreen] = useState(2);
   const [showSplash, setShowSplash] = useState(true);
   useEffect(() => {
     console.log(screen);
