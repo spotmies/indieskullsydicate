@@ -81,8 +81,8 @@ function Landing(props) {
   ///////////////////////////////////////////////////
   /////////CONTRACT VARIABLES////////////////////////
   ///////////////////////////////////////////////////
-  const futureDate = new Date(1664978400000);
-  // const futureDate = new Date(1660889040000);
+  // const futureDate = new Date(1666260240000);
+  const futureDate = new Date(1666371600000); // 21 st 10:30pm ist
   // const whiteListDate = new Date(1660914000000);
   const whiteListDate = new Date(1660917600000);
 
@@ -667,9 +667,9 @@ function Landing(props) {
         {screen === 0 && showMint ? (
           // mintSoonContent
           mintStarted ? (
-            mintSoonContent // mintBuy
+            mintBuy
           ) : (
-            mintSoonContent // mintTimer
+            mintTimer
           )
         ) : (
           // mintBuy

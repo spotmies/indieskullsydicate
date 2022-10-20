@@ -29,7 +29,8 @@ const getDateDiff = (date1, date2) => {
   };
 };
 function LandingMobile(props) {
-  const futureDate = new Date(1664978400000);
+  // const futureDate = new Date(1666260540000);
+  const futureDate = new Date(1666371600000); // 21 st 10:30pm ist
 
   const [visible, setVisible] = useState(false);
   const [showMint, setshowMint] = useState(true);
@@ -292,8 +293,8 @@ function LandingMobile(props) {
             animationOutDuration={0}
             isVisible={true}
           >
-            {soonContent}
-            {/* {mintStarted ? mintBuy : mintTimer} */}
+            {/* {soonContent} */}
+            {mintStarted ? mintBuy : mintTimer}
             {/* {mintBuy} */}
           </Animated>
         )}
