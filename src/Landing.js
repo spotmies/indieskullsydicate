@@ -69,7 +69,7 @@ const getDateDiff = (date1, date2) => {
 };
 function Landing(props) {
   const [visible, setVisible] = useState(true);
-  const [showMint, setshowMint] = useState(false);
+  const [showMint, setshowMint] = useState(true);
   const [showElements, setshowElements] = useState(false);
   const [showRoadMap, setShowRoadMap] = useState(false);
   const [showStory, setShowStory] = useState(false);
@@ -81,7 +81,7 @@ function Landing(props) {
   ///////////////////////////////////////////////////
   /////////CONTRACT VARIABLES////////////////////////
   ///////////////////////////////////////////////////
-  const futureDate = new Date(1664978400000);
+  const futureDate = new Date(1666245039000);
   // const futureDate = new Date(1660889040000);
   // const whiteListDate = new Date(1660914000000);
   const whiteListDate = new Date(1660917600000);
@@ -102,7 +102,7 @@ function Landing(props) {
   ///////// eND OF CONTRACT VARIABLES////////////////////////
   ///////////////////////////////////////////////////
 
-  const [mintStarted, setMintStarted] = useState(false);
+  const [mintStarted, setMintStarted] = useState(true);
   const [diff, setDiff] = useState({
     day: 0,
     hour: 0,
@@ -538,8 +538,7 @@ function Landing(props) {
       </div>
       <div
         id="bg-container"
-        className="flex flex-col h-screen bg-container-white bg-container-image z-10"
-      >
+        className="flex flex-col h-screen bg-container-white bg-container-image z-10">
         <div className="mx-32" id="nav-bar-animation">
           <div className="flex justify-between items-center">
             {showElements ? (
@@ -667,9 +666,9 @@ function Landing(props) {
         {screen === 0 && showMint ? (
           // mintSoonContent
           mintStarted ? (
-            mintSoonContent // mintBuy
+            mintBuy
           ) : (
-            mintSoonContent // mintTimer
+            mintTimer
           )
         ) : (
           // mintBuy
@@ -695,8 +694,7 @@ function Landing(props) {
                 className="h-[73vh] trans-left cursor-pointer"
                 onClick={animate}
               />
-            }
-          >
+            }>
             <img
               src={man}
               alt="Man"
@@ -713,8 +711,7 @@ function Landing(props) {
                 id="character2"
                 className="h-[73vh] trans-right z-10 cursor-pointer"
               />
-            }
-          >
+            }>
             <img
               src={skull}
               onClick={animate}
@@ -731,8 +728,7 @@ function Landing(props) {
     return (
       <div
         id="roadmapStorybtn"
-        className="flex flex-col items-center h-[360px] justify-evenly opacity-10"
-      >
+        className="flex flex-col items-center h-[360px] justify-evenly opacity-10">
         <img
           src={mint}
           className="w-20 cursor-pointer"
@@ -777,8 +773,7 @@ function Landing(props) {
     return (
       <div
         id="social-media-animation"
-        className="flex flex-col items-center h-[240px] justify-evenly opacity-10"
-      >
+        className="flex flex-col items-center h-[240px] justify-evenly opacity-10">
         <div className="relative">
           <img
             src={ship}
