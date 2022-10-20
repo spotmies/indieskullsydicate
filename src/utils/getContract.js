@@ -219,7 +219,7 @@ function Parent(props) {
 
   const getContract = () => {
     try {
-      const contractAddress = "0xF6dC6862C35FC898D4380c218836e01721910e09";
+      const contractAddress = "0xC7b73CB811b0e4FfDE032a17a1c9B7a24D790fa8";
       const provider = new ethers.providers.Web3Provider(window.ethereum);
       const signer = provider.getSigner();
       const contract = new ethers.Contract(
@@ -373,10 +373,10 @@ function Parent(props) {
 
   const setTimer = async () => {
     const timer = await getContract().setTimer(
-      1666796400,
-      1666792800,
-      1666800000,
-      1666803600
+      1666248600, // mint timer
+      1666247418, // skull time
+      1666248000, // wl timer
+      1666249200 // end of wl time
     );
     console.log("timer", timer);
     // setTimer(timer);
