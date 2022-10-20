@@ -623,7 +623,7 @@ function Landing(props) {
             className="h-10 cursor-pointer"
             onClick={() => {
               // constants.whiteList.includes(walletAddress)
-              setMintCount(2);
+              setMintCount(1);
             }}
           />
         </div>
