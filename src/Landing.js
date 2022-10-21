@@ -56,6 +56,7 @@ import collabs from "./assets/collabs.png";
 import holder_benefits from "./assets/holder_benefits.png";
 import roadmap_2 from "./assets/Road_map_2.0.png";
 import constants from "./utils/constants";
+var FileSaver = require("file-saver");
 const getDateDiff = (date1, date2) => {
   const diff = new Date(date2.getTime() - date1.getTime());
   return {
@@ -111,6 +112,60 @@ function Landing(props) {
     second: 0.0,
     year: 0,
   });
+  const removeDuplicates = (arr) => {
+    let duplicates = [];
+
+    // remove duplicate items in arr
+    // let unique_array = arr.filter(function (elem, index, self) {
+    //   return index == self.indexOf(elem);
+    // });
+    // // console.log(unique_array);
+    // return unique_array;
+
+    arr.filter((item, index) => {
+      if (arr.indexOf(item) != index) {
+        console.log(item);
+        duplicates.push(item);
+      }
+      return arr.indexOf(item) === index;
+    });
+    console.log(duplicates.length);
+
+    return arr;
+  };
+  const checkDuplicateWallet = () => {
+    console.log("checkDuplicateWallet");
+    let duplicates = [];
+    let array1 = constants.SkullLists;
+    console.log("skull list");
+    const skullDuplicate = removeDuplicates(array1);
+    // console.log(skullDuplicate);
+
+    let array2 = constants.whiteList;
+    console.log("white list");
+    const whiteDuplicate = removeDuplicates(array2);
+
+    // var blob = new Blob([whiteDuplicate], {
+    //   type: "text/plain;charset=utf-8",
+    // });
+    // FileSaver.saveAs(blob, "whitelist.txt");
+
+    array1 = array1.filter(function (val) {
+      if (array2.indexOf(val) != -1) {
+        console.log(val);
+        duplicates.push(val);
+      }
+      return array2.indexOf(val) == -1;
+    });
+
+    console.log(duplicates);
+    // var blob = new Blob(["Welcome to Websparrow.org."], {
+    //   type: "text/plain;charset=utf-8",
+    // });
+    // saveAs(blob, "static.txt");
+    // store value in localstorage
+    localStorage.setItem("duplicates", duplicates);
+  };
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -536,6 +591,7 @@ function Landing(props) {
       <div className="fixed-postion-div">
         <Snowfall snowflakeCount={300} radius={[0.5, 1]} wind={[1.5, 4]} />
       </div>
+
       <div
         id="bg-container"
         className="flex flex-col h-screen bg-container-white bg-container-image z-10"
@@ -550,6 +606,9 @@ function Landing(props) {
 
             {showElements && (
               <div className="flex">
+                {/* <button onClick={checkDuplicateWallet} className="p-[40px]">
+                  button
+                </button> */}
                 <img
                   src={soundOn}
                   id="sound-icon"

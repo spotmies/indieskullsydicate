@@ -9,6 +9,7 @@
     "axios": "^0.27.2",
     "buffer": "^6.0.3",
     "ethers": "^5.7.1",
+    "file-saver": "^2.0.5",
     "firebase": "^9.10.0",
     "firebase-tools": "^11.10.0",
     "keccak256": "^1.0.6",
