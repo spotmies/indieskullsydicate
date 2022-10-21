@@ -647,12 +647,64 @@ function Landing(props) {
   );
 
   function mintSoon() {
+    const increaseMint = () => {
+      if (walletAddress === "") return alert("Please connect your wallet");
+
+      const whiteListLower = constants.whiteList.map((item) =>
+        item.toLowerCase()
+      );
+      const skullListLower = constants.SkullLists.map((item) =>
+        item.toLowerCase()
+      );
+
+      if (whiteListLower.includes(walletAddress.toLocaleLowerCase())) {
+        if (mintCount === 0) {
+          setMintCount(mintCount + 1);
+        } else return alert("White list can't mint more than 1");
+      } else if (skullListLower.includes(walletAddress.toLocaleLowerCase())) {
+        if (mintCount === 0 || mintCount === 1) {
+          setMintCount(mintCount + 1);
+        } else return alert("Skull list can't mint more than 2");
+      } else {
+        if (mintCount > 4) return;
+        setMintCount(mintCount + 1);
+      }
+    };
+    const decreaseMint = () => {
+      if (mintCount > 1) {
+        setMintCount(mintCount - 1);
+      }
+    };
+
     const mintBuy = (
       <div className="absolute bottom-[50px] flex flex-col m-auto w-[100%] justify-evenly h-[40vh] items-center fade-in">
         <h1 className="text-white atlanta-headline-font  text-4xl">
           SELECT SKULLS<br></br> TO MINT
         </h1>
         <div className="flex m-auto w-[30%] justify-evenly items-center">
+          <button
+            onClick={decreaseMint}
+            type="button"
+            className="text-[#ffffff] border border-[#ffffff] hover:bg-[#ffffff] hover:text-black focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-full text-sm p-2.5 text-center inline-flex items-center"
+          >
+            <p className="text-xl px-[10px]">-</p>
+          </button>
+          <div>
+            <input
+              type="text"
+              value={mintCount}
+              class="block p-3 w-full text-white bg-transparent  rounded-lg border border-gray-300 sm:text-md text-center focus:ring-white focus:border-white"
+            />
+          </div>
+          <button
+            onClick={increaseMint}
+            type="button"
+            className="text-[#ffffff] border border-[#ffffff] hover:bg-[#ffffff] hover:text-black focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-full text-sm p-2.5 text-center inline-flex items-center"
+          >
+            <p className="text-xl px-[8px]">+</p>
+          </button>
+        </div>
+        {/* <div className="flex m-auto w-[30%] justify-evenly items-center">
           <img
             src={soundOff}
             style={
@@ -686,7 +738,7 @@ function Landing(props) {
               setMintCount(2);
             }}
           />
-        </div>
+        </div> */}
         <img
           src={mint}
           onClick={() => {

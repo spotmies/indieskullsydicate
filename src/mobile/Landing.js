@@ -17,6 +17,7 @@ import collabs from "../assets/collabs.png";
 import holder_benefits from "../assets/holder_benefits.png";
 import roadmap_2 from "../assets/Road_map_2.0.png";
 import wallet_Icon from "../assets/metamask_icon.png";
+import constants from "../utils/constants";
 const getDateDiff = (date1, date2) => {
   const diff = new Date(date2.getTime() - date1.getTime());
   return {
@@ -212,12 +213,64 @@ function LandingMobile(props) {
   );
 
   function mintSoon() {
+    const increaseMint = () => {
+      if (walletAddress === "") return alert("Please connect your wallet");
+
+      const whiteListLower = constants.whiteList.map((item) =>
+        item.toLowerCase()
+      );
+      const skullListLower = constants.SkullLists.map((item) =>
+        item.toLowerCase()
+      );
+
+      if (whiteListLower.includes(walletAddress.toLocaleLowerCase())) {
+        if (mintCount === 0) {
+          setMintCount(mintCount + 1);
+        } else return alert("White list can't mint more than 1");
+      } else if (skullListLower.includes(walletAddress.toLocaleLowerCase())) {
+        if (mintCount === 0 || mintCount === 1) {
+          setMintCount(mintCount + 1);
+        } else return alert("Skull list can't mint more than 2");
+      } else {
+        if (mintCount > 4) return;
+        setMintCount(mintCount + 1);
+      }
+    };
+    const decreaseMint = () => {
+      if (mintCount > 1) {
+        setMintCount(mintCount - 1);
+      }
+    };
+
     const mintBuy = (
       <div className=" flex flex-col m-auto w-[100%] justify-evenly h-[40vh] items-center fade-in">
         <h1 className="text-white atlanta-headline-font  text-4xl">
           SELECT SKULLS<br></br> TO MINT
         </h1>
-        <div className="flex m-auto w-[90%] justify-around items-center">
+        <div className="flex m-auto w-[90%] justify-evenly items-center">
+          <button
+            onClick={decreaseMint}
+            type="button"
+            className="text-[#ffffff] border border-[#ffffff] hover:bg-[#ffffff] hover:text-black focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-full text-sm p-2.5 text-center inline-flex items-center"
+          >
+            <p className="text-xl px-[10px]">-</p>
+          </button>
+          <div>
+            <input
+              type="text"
+              value={mintCount}
+              class="w-[60%] m-auto block p-3 w-full text-white bg-transparent  rounded-lg border border-gray-300 sm:text-md text-center focus:ring-white focus:border-white"
+            />
+          </div>
+          <button
+            onClick={increaseMint}
+            type="button"
+            className="text-[#ffffff] border border-[#ffffff] hover:bg-[#ffffff] hover:text-black focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-full text-sm p-2.5 text-center inline-flex items-center"
+          >
+            <p className="text-xl px-[8px]">+</p>
+          </button>
+        </div>
+        {/* <div className="flex m-auto w-[90%] justify-around items-center">
           <img
             src={soundOff}
             style={
@@ -250,7 +303,7 @@ function LandingMobile(props) {
               setMintCount(2);
             }}
           />
-        </div>
+        </div> */}
         <img
           src={mint}
           onClick={() => {
