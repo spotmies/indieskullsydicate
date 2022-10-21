@@ -349,7 +349,7 @@ function Parent(props) {
 
   const setRootHash = async () => {
     const rootHash = await getContract().add_WhiteList_Hash(
-      "0x41e073ed32e8c4973f91d5526a5953368a0c504963d4d3b4637eb97f00cd5d64"
+      "0x2a5756a6dbed7884c7b66ffe1a294ab552af40e05dff5b8bbbffd2130903ec71"
     );
     console.log("rootHash", rootHash);
     // setRoot(rootHash);
