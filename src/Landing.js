@@ -752,6 +752,8 @@ function Landing(props) {
             e.currentTarget.src = mint;
           }}
         />
+
+        <p className="text-white pt-[20px]">{props.totalMint} / 2500</p>
       </div>
     );
     const mintSoonContent = (

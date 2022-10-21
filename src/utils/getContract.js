@@ -26,7 +26,7 @@ function Parent(props) {
   // const [quantity, setQuantity] = useState(1);
   // const [chainId, setChainId] = useState(1);
   const [outOfShit, setOutofshit] = useState(false);
-  const [totalMints, settotalMints] = useState("0");
+  const [totalMints, settotalMints] = useState("5");
 
   // Google analytics constants
   const gaWalletTracker = useAnalyticsEventTracker("wallet");
@@ -235,6 +235,10 @@ function Parent(props) {
     }
   };
 
+  const setTotalCount = (mints) => {
+    settotalMints(mints.toString());
+  };
+
   const mintCount = async () => {
     // const TotalMinted = await getContract().suppliedNFTs();
 
@@ -251,7 +255,9 @@ function Parent(props) {
       console.log("myMints", parseInt(userMinted._hex, 16));
       setUserMints(parseInt(userMinted._hex, 16));
       console.log("totalMinted", TotalMinted.toString());
-      settotalMints(totalMints.toString());
+      setTotalCount(TotalMinted.toString());
+      // save to loc
+      settotalMints(TotalMinted.toString());
 
       console.log(parseInt(TotalMinted._hex, 16));
       try {
