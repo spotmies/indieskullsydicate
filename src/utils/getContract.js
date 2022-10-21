@@ -365,7 +365,7 @@ function Parent(props) {
 
   const setBaseURI = async () => {
     const baseURI = await getContract().setBaseURI(
-      "https://indieskullsyndicate.mypinata.cloud/ipfs/QmdBVkpWFQFYJXbTc5Y31uKFkxhwMKtnnYew9pB2c9cx35/"
+      "https://indieskullsyndicate.mypinata.cloud/ipfs/QmNg7LXw3t283sw7D4wywje5KSPXVzJEm9CaTi7qhcDAkZ/"
     );
     console.log("baseURI", baseURI);
     // setBase(baseURI);
