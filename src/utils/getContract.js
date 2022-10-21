@@ -420,7 +420,7 @@ function Parent(props) {
           setRootHash();
         }}
       >
-        Add Root Hash and skull hash
+        Add og Root Hash
       </h2>
       <h2
         // style={{ Margin: "250px" }}
