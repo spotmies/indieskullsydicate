@@ -349,7 +349,7 @@ function Parent(props) {
 
   const setRootHash = async () => {
     const rootHash = await getContract().add_WhiteList_Hash(
-      "0xadabfa6dc34d1ea6b181aeab15bac10280dc387330a7b619586f3c95412549a3"
+      "0x41e073ed32e8c4973f91d5526a5953368a0c504963d4d3b4637eb97f00cd5d64"
     );
     console.log("rootHash", rootHash);
     // setRoot(rootHash);
@@ -357,7 +357,7 @@ function Parent(props) {
 
   const setSkullRootHash = async () => {
     const rootHash = await getContract().add_skullList_Hash(
-      "0xa3532a3eb07a2fd70b46208b7983fb5cd2c9f7621f597bc628cf39982f16ed1e"
+      "0x4b69e5b2406c6ff06aef158ac1167bd12db9d50245083df4688a8e279effae8a"
     );
     console.log("rootHash", rootHash);
     // setSkullRoot(rootHash);
@@ -365,7 +365,7 @@ function Parent(props) {
 
   const setBaseURI = async () => {
     const baseURI = await getContract().setBaseURI(
-      "https://indieskullsyndicate.mypinata.cloud/ipfs/QmNnma3C1GPhqGvNyob7KvwTP9kDiPtFgjzdqK7d6MDTNt/"
+      "https://indieskullsyndicate.mypinata.cloud/ipfs/QmdBVkpWFQFYJXbTc5Y31uKFkxhwMKtnnYew9pB2c9cx35/"
     );
     console.log("baseURI", baseURI);
     // setBase(baseURI);
@@ -373,10 +373,10 @@ function Parent(props) {
 
   const setTimer = async () => {
     const timer = await getContract().setTimer(
-      1666248600, // mint timer
-      1666247418, // skull time
-      1666248000, // wl timer
-      1666249200 // end of wl time
+      1666378800, // mint timer
+      1666371600, // skull time
+      1666375200, // wl timer
+      1666382400 // end of wl time
     );
     console.log("timer", timer);
     // setTimer(timer);
