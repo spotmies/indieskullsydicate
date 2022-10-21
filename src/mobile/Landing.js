@@ -541,7 +541,15 @@ function LandingMobile(props) {
         isVisible={true}
       >
         <div className="flex items-center justify-evenly">
-          <img src={shipHover} className="w-7 m-2" />
+          <img
+            src={shipHover}
+            className="w-7 m-2"
+            onClick={() => {
+              window.open(
+                "https://opensea.io/collection/indie-skull-syndicate-official-drop"
+              );
+            }}
+          />
 
           <img
             src={twitterHover}

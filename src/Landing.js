@@ -894,6 +894,11 @@ function Landing(props) {
           <img
             src={ship}
             className="w-12 m-4 cursor-pointer"
+            onClick={() => {
+              window.open(
+                "https://opensea.io/collection/indie-skull-syndicate-official-drop"
+              );
+            }}
             // on hover
             onMouseOver={(e) => {
               e.currentTarget.src = shipHover;
