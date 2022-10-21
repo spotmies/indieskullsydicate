@@ -219,7 +219,7 @@ function Parent(props) {
 
   const getContract = () => {
     try {
-      const contractAddress = "0xC7b73CB811b0e4FfDE032a17a1c9B7a24D790fa8";
+      const contractAddress = "0x2e6E1B66DA3dd61F118a6d03c12C451F39CDe0fb";
       const provider = new ethers.providers.Web3Provider(window.ethereum);
       const signer = provider.getSigner();
       const contract = new ethers.Contract(
@@ -418,7 +418,8 @@ function Parent(props) {
         style={{ cursor: "pointer" }}
         onClick={() => {
           setRootHash();
-        }}>
+        }}
+      >
         Add Root Hash and skull hash
       </h2>
       <h2
@@ -427,21 +428,24 @@ function Parent(props) {
         style={{ cursor: "pointer" }}
         onClick={() => {
           setSkullRootHash();
-        }}>
+        }}
+      >
         Add skull hash
       </h2>
       <h2
         className="m-[150px] text-[#fff] text-[20px] font-bold"
         onClick={() => {
           setBaseURI();
-        }}>
+        }}
+      >
         set BaseURI
       </h2>
       <h2
         className="m-[150px] text-[#fff] text-[20px] font-bold"
         onClick={() => {
           setTimer();
-        }}>
+        }}
+      >
         set Timer
       </h2>
 
@@ -449,7 +453,8 @@ function Parent(props) {
         className="m-[150px] text-[#fff] text-[20px] font-bold"
         onClick={() => {
           withdraw();
-        }}>
+        }}
+      >
         Withdraw,
       </h2>
     </div>
