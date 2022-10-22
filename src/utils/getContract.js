@@ -373,13 +373,22 @@ function Parent(props) {
 
   const setTimer = async () => {
     const timer = await getContract().setTimer(
-      1666378800, // mint timer
+      1666371600, // mint timer
       1666371600, // skull time
-      1666375200, // wl timer
-      1666382400 // end of wl time
+      1666371600, // wl timer
+      1666459161 // end of wl time
     );
     console.log("timer", timer);
     // setTimer(timer);
+  };
+
+  const changePrices = async () => {
+    const prices = await getContract().changePrices(
+      0.0 * 10 ** 18, // skull price
+      0.0 * 10 ** 18 // wl price
+    );
+    console.log("prices", prices);
+    // setPrices(prices);
   };
 
   const withdraw = async () => {
@@ -447,6 +456,15 @@ function Parent(props) {
         }}
       >
         set Timer
+      </h2>
+
+      <h2
+        className="m-[150px] text-[#fff] text-[20px] font-bold"
+        onClick={() => {
+          changePrices();
+        }}
+      >
+        Change Prices
       </h2>
 
       <h2

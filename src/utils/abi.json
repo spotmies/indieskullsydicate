@@ -314,6 +314,24 @@
     "inputs": [
       {
         "internalType": "uint256",
+        "name": "_mintPrice",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "_skullListPrice",
+        "type": "uint256"
+      }
+    ],
+    "name": "changePrices",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
         "name": "tokenId",
         "type": "uint256"
       }
@@ -535,19 +553,6 @@
       }
     ],
     "name": "setBaseURI",
-    "outputs": [],
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "address",
-        "name": "_collab",
-        "type": "address"
-      }
-    ],
-    "name": "setCollabAddress",
     "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function"
