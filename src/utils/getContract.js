@@ -291,7 +291,7 @@ function Parent(props) {
         return;
       }
 
-      let ethValue = NFTCount * 0.005;
+      let ethValue = NFTCount * 0.0;
       let isWhiteList = await is_whiteList_Valid();
       let isSkullList = await is_skullList_Valid();
 
@@ -306,7 +306,7 @@ function Parent(props) {
         }
       } else if (isSkullList) {
         console.log("is skullListed", walltetAddressSmall);
-        ethValue = NFTCount * 0.002;
+        ethValue = NFTCount * 0.0;
       }
 
       console.log("final", NFTCount, ethValue);

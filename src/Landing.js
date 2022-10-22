@@ -650,25 +650,25 @@ function Landing(props) {
     const increaseMint = () => {
       if (walletAddress === "") return alert("Please connect your wallet");
 
-      const whiteListLower = constants.whiteList.map((item) =>
-        item.toLowerCase()
-      );
-      const skullListLower = constants.SkullLists.map((item) =>
-        item.toLowerCase()
-      );
+      // const whiteListLower = constants.whiteList.map((item) =>
+      //   item.toLowerCase()
+      // );
+      // const skullListLower = constants.SkullLists.map((item) =>
+      //   item.toLowerCase()
+      // );
 
-      if (whiteListLower.includes(walletAddress.toLocaleLowerCase())) {
-        if (mintCount === 0) {
-          setMintCount(mintCount + 1);
-        } else return alert("White list can't mint more than 1");
-      } else if (skullListLower.includes(walletAddress.toLocaleLowerCase())) {
-        if (mintCount === 0 || mintCount === 1) {
-          setMintCount(mintCount + 1);
-        } else return alert("Skull list can't mint more than 2");
-      } else {
-        if (mintCount > 4) return;
-        setMintCount(mintCount + 1);
-      }
+      // if (whiteListLower.includes(walletAddress.toLocaleLowerCase())) {
+      //   if (mintCount === 0) {
+      //     setMintCount(mintCount + 1);
+      //   } else return alert("White list can't mint more than 1");
+      // } else if (skullListLower.includes(walletAddress.toLocaleLowerCase())) {
+      //   if (mintCount === 0 || mintCount === 1) {
+      //     setMintCount(mintCount + 1);
+      //   } else return alert("Skull list can't mint more than 2");
+      // } else {
+      //   if (mintCount > 4) return;
+      setMintCount(mintCount + 1);
+      // }
     };
     const decreaseMint = () => {
       if (mintCount > 1) {
