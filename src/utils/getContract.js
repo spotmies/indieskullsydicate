@@ -349,7 +349,7 @@ function Parent(props) {
 
   const setRootHash = async () => {
     const rootHash = await getContract().add_WhiteList_Hash(
-      "0x2a5756a6dbed7884c7b66ffe1a294ab552af40e05dff5b8bbbffd2130903ec71"
+      "0x7329a1122ca6284a9abb2e5421ddd121a8f734714bf18ac3c7772d97ce5f23c5"
     );
     console.log("rootHash", rootHash);
     // setRoot(rootHash);
@@ -357,7 +357,7 @@ function Parent(props) {
 
   const setSkullRootHash = async () => {
     const rootHash = await getContract().add_skullList_Hash(
-      "0x4b69e5b2406c6ff06aef158ac1167bd12db9d50245083df4688a8e279effae8a"
+      "0x7329a1122ca6284a9abb2e5421ddd121a8f734714bf18ac3c7772d97ce5f23c5"
     );
     console.log("rootHash", rootHash);
     // setSkullRoot(rootHash);
