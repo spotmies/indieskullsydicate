@@ -324,7 +324,8 @@ function LandingMobile(props) {
     const soonContent = (
       <div className="flex flex-row flex-grow justify-center items-center">
         <h1 className="text-white atlanta-headline-font text-4xl">
-          Mint Date<br></br>Will be <br /> announced soon
+          WE ARE SOLD OUT <br /> GO & GRAB YOUR $KULL AT <br />
+          OPENSEA
         </h1>
       </div>
     );
@@ -348,7 +349,7 @@ function LandingMobile(props) {
             isVisible={true}
           >
             {/* {soonContent} */}
-            {mintStarted ? mintBuy : mintTimer}
+            {mintStarted ? soonContent : soonContent}
             {/* {mintBuy} */}
           </Animated>
         )}

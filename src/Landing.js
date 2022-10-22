@@ -759,7 +759,8 @@ function Landing(props) {
     const mintSoonContent = (
       <div className="absolute flex flex-row flex-grow justify-center h-[60vh] items-center fade-in">
         <h1 className="text-white atlanta-headline-font  text-4xl">
-          MINT DATE<br></br>WILL BE <br /> ANNOUNCED SOON
+          WE ARE SOLD OUT <br /> GO & GRAB YOUR $KULL AT <br />
+          OPENSEA
         </h1>
       </div>
     );
@@ -780,9 +781,9 @@ function Landing(props) {
         {screen === 0 && showMint ? (
           // mintSoonContent
           mintStarted ? (
-            mintBuy
+            mintSoonContent
           ) : (
-            mintTimer
+            mintSoonContent
           )
         ) : (
           // mintBuy
